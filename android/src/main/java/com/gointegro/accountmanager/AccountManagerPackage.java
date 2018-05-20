@@ -10,9 +10,8 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-
 public class AccountManagerPackage implements ReactPackage {
-	@Override
+  // @Override => Deprecated since 0.47.0
   public List<Class<? extends JavaScriptModule>> createJSModules() {
     return Collections.emptyList();
   }
@@ -23,12 +22,9 @@ public class AccountManagerPackage implements ReactPackage {
   }
 
   @Override
-  public List<NativeModule> createNativeModules(
-		ReactApplicationContext reactContext) {
+  public List<NativeModule> createNativeModules(ReactApplicationContext reactContext) {
     List<NativeModule> modules = new ArrayList<>();
-
     modules.add(new AccountManagerModule(reactContext));
-
     return modules;
   }
 
